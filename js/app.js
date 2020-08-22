@@ -1,0 +1,1 @@
+window.alert("Start of Text Converter");

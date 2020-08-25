@@ -10,10 +10,15 @@ function outputText(textOut) {
     console.log("Texto de Saída " + textOut);    
 }
 
-function upCase() {
-    //Converte o texto para todas as letras maiúsculas
+function uCase() { //Converte o texto para todas as letras maiúsculas
     let textIn = "";
     textIn = document.getElementById("textInOut").value.toUpperCase();
     //console.log("Função upCase " + textIn);
+    outputText(textIn);
+}
+
+function lCase() { //Converte o texto para todas as letras minúsculas
+    let textIn = "";
+    textIn = document.getElementById("textInOut").value.toLowerCase();
     outputText(textIn);
 }

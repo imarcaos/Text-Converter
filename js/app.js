@@ -22,3 +22,20 @@ function lCase() { //Converte o texto para todas as letras minúsculas
     textIn = document.getElementById("textInOut").value.toLowerCase();
     outputText(textIn);
 }
+
+function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do paragráfo
+    let textIn = "", nW = "";
+    textIn = document.getElementById("textInOut").value.toLowerCase();
+
+    for (let i = 0; i < textIn.length; i++) {
+       // if (textIn.indexOf(textIn[i]) == /\./) {
+        if (textIn.indexOf(textIn[i]) == 'e') {
+            console.log(textIn[i]);
+        } else {
+            console.log("Error");
+        }
+            
+    }
+    
+    //console.log('xxx1,xxx'.search('1\\,'));
+}

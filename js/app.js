@@ -27,10 +27,12 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
     let textIn = "", nW = "";
     textIn = document.getElementById("textInOut").value.toLowerCase();
 
-    for (let i = 0; i < textIn.length; i++) {
+    for (let i = 0; i < textIn.length; i++) {        
+        //console.log(textIn[i]);
+
        // if (textIn.indexOf(textIn[i]) == /\./) {
-        if (textIn.indexOf(textIn[i]) == 'e') {
-            console.log(textIn[i]);
+        if (textIn[i] ===  ".") {
+            console.log("Pesquisa: " + textIn[i] + " - posição: " + [i]);
         } else {
             console.log("Error");
         }

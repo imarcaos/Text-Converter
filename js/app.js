@@ -26,16 +26,26 @@ function lCase() { //Converte o texto para todas as letras minúsculas
 function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do paragráfo
     let textIn = "", nW = "";
     textIn = document.getElementById("textInOut").value.toLowerCase();
+    //console.log(textIn);
 
     for (let i = 0; i < textIn.length; i++) {        
-        //console.log(textIn[i]);
-
-       // if (textIn.indexOf(textIn[i]) == /\./) {
-        if (textIn[i] ===  ".") {
-            console.log("Pesquisa: " + textIn[i] + " - posição: " + [i]);
-        } else {
-            console.log("Error");
+        console.log(textIn[i]);
+        //console.log(textIn.indexOf(" "));
+        if (textIn[i] == " ") {
+            console.log("-> " + i);
         }
+        
+        /*
+        if ( i == 0) {
+            //nW = textIn[i].toLowerCase().replace(/(?:^|\s)\S/g, function (a) { return a.toUpperCase(); });
+            //console.log(nW);
+
+        } else if (nW[i] ===  ".") {
+            //nW += nW.toLowerCase().replace(/(?:^|\s)\S/g, function (a) { return a.toUpperCase(); });
+            //console.log(nW);
+
+        }
+        */
             
     }
     

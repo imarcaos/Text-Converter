@@ -3,4 +3,3 @@
 
 > Status do Projeto: Em desenvolvimento :warning:
 
-![Marcos Melo - iMarcaos GitHub Stats](https://github-readme-stats.vercel.app/api?username=imarcaos&show_icons=true)

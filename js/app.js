@@ -30,9 +30,10 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
 
     for (let i = 0; i < textIn.length; i++) {        
         console.log(textIn[i]);
-        //console.log(textIn.indexOf(" "));
-        if (textIn[i] == " ") {
-            console.log("-> " + i);
+
+        if (textIn.indexOf(" ") > i) {
+            nW = textIn[i].toUpperCase();
+            console.log("-> " + i + " " + nW);
         }
         
         /*

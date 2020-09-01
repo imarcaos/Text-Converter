@@ -27,13 +27,13 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
     let textIn = "", nW = ""; // var text Input e new Word
     textIn = document.getElementById("textInOut").value.toLowerCase();
     nW = clearList(textIn.split(" "), "");    
-    //console.log(nW);
-    // falta converter todas as palavras a seguir aos pontos 01/09/2020
+    console.log(nW.length);
+    // falta converter todas as palavras a seguir a quebra de linha 01/09/2020
     
     for (let i = 0; i < nW.length; i++) {        
 
         if ( i == 0){
-            if (  nW[i].indexOf(".") >= 0 && nW.length <= 1 ) {
+            if (  nW[i].indexOf(".") >= 0 && nW.length > 1 ) {
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
@@ -42,7 +42,7 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 let firstLetter1 = w1[0];
                 w1 = firstLetter1.toUpperCase() + w1.slice(1);
                 nW[i+1] = w1;
-            } else {
+            } else if ( nW[i].indexOf(".") >= 0 && nW.length <= 1 ) {
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);

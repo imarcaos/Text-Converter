@@ -27,8 +27,8 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
     let textIn = "", nW = ""; // var text Input e new Word
     textIn = document.getElementById("textInOut").value.toLowerCase();
     nW = clearList(textIn.split(" "), "");    
-    console.log(nW.length);
-    // falta converter todas as palavras a seguir a quebra de linha 01/09/2020
+    console.log(nW);
+    // falta converter todas as palavras a seguir a quebra de linha (enter) 01/09/2020
     
     for (let i = 0; i < nW.length; i++) {        
 
@@ -49,14 +49,14 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 nW[i] = w;
             }
             
-        } else if ( nW[i].indexOf(".") >= 0 && nW.length > i ){ //rever o sinal de < aqui 01/09/2020
+        } else if ( nW[i].indexOf(".") >= 0 && nW.length > i ) { 
             let w = nW[i+1];
             let firstLetter = w[0];
             w = firstLetter.toUpperCase() + w.slice(1);
             nW[i+1] = w;
-        } else if (nW == "") {
-            console.log("É um espaço ->" + nW[i]);
-        }
+        } else if (nW[i] === '\n' || nW[i] === '\r') { // função para procurar a tecla enter em teste 01/09/2020
+            console.log('found enter key')
+         };
     }
     console.log(nW.join(" "));
 }

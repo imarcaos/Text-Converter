@@ -33,7 +33,7 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
     for (let i = 0; i < nW.length; i++) {        
 
         if ( i == 0){
-            if (  nW[i].indexOf(".") >= 0 && nW.length < 1 ) {
+            if (  nW[i].indexOf(".") >= 0 && nW.length <= 1 ) {
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
@@ -49,7 +49,7 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 nW[i] = w;
             }
             
-        } else if ( nW[i].indexOf(".") >= 0 && nW.length < i ){ //rever o sinal de < aqui 01/09/2020
+        } else if ( nW[i].indexOf(".") >= 0 && nW.length > i ){ //rever o sinal de < aqui 01/09/2020
             let w = nW[i+1];
             let firstLetter = w[0];
             w = firstLetter.toUpperCase() + w.slice(1);

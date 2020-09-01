@@ -26,16 +26,14 @@ function lCase() { //Converte o texto para todas as letras minúsculas
 function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do paragráfo
     let textIn = "", nW = ""; // var text Input e new Word
     textIn = document.getElementById("textInOut").value.toLowerCase();
-    nW = textIn.split(" ");    
+    nW = clearList(textIn.split(" "), "");    
     //console.log(nW);
-    // esta com erro quando texto inicia com espaço em branco (inicio da array) (29/08/2020)
-    // erro com mais de um espaço em branco entre palavras (31/08/2020)
-    // erro quando possui apenas um palavra e ponto final (31/08/2020)
+    // falta converter todas as palavras a seguir aos pontos 01/09/2020
     
     for (let i = 0; i < nW.length; i++) {        
 
-        if ( i == 0 && nW[i] != " "){
-            if (  nW[i].indexOf(".") >= 0 ) {
+        if ( i == 0){
+            if (  nW[i].indexOf(".") >= 0 && nW.length < 1 ) {
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
@@ -45,21 +43,32 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 w1 = firstLetter1.toUpperCase() + w1.slice(1);
                 nW[i+1] = w1;
             } else {
-                nW[i] == nW[i+1];
-                /* let w = nW[i];
+                let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
-                nW[i] = w; */
+                nW[i] = w;
             }
             
-        } else if ( nW[i].indexOf(".") >= 0 && nW.length < i ){
+        } else if ( nW[i].indexOf(".") >= 0 && nW.length < i ){ //rever o sinal de < aqui 01/09/2020
             let w = nW[i+1];
             let firstLetter = w[0];
             w = firstLetter.toUpperCase() + w.slice(1);
             nW[i+1] = w;
-        } else if (nW == " ") {
+        } else if (nW == "") {
             console.log("É um espaço ->" + nW[i]);
         }
     }
     console.log(nW.join(" "));
+}
+
+function clearList(listA, busca) {
+    let list = listA;
+    let buscarPor = busca;
+    let indice = list.indexOf(buscarPor);
+
+    while(indice >= 0){
+        list.splice(indice, 1);
+        indice = list.indexOf(buscarPor);
+    }
+    return list;    
 }

@@ -1,4 +1,26 @@
+#container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+}
+ 
+#textBox {
+  order: 1;
+}
+
+#btnBox {
+  order: 2;
+
+}
+ 
 label {
-    display: block;
-  }
+  display: block;
+}
+label#convText {
+  letter-spacing: 1px;
+  font-size: 30px;
+  color: #808080;
+}
   

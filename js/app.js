@@ -34,7 +34,8 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
         //console.log(nW[i].indexOf("\n"));    
 
         if ( i == 0){
-            if (  nW[i].indexOf(".") >= 0 && nW.length > 1 ) {
+
+            if ( nW[i].indexOf(".") >= 0 && nW.length > 1 ) {
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
@@ -43,13 +44,16 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 let firstLetter1 = w1[0];
                 w1 = firstLetter1.toUpperCase() + w1.slice(1);
                 nW[i+1] = w1;
+
             } else if ( nW[i].indexOf(".") >= 0 && nW.length <= 1 ) {
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
                 nW[i] = w;
-            } else if ( nW[i].indexOf("\n") === '\n' || nW[i].indexOf("\r") === '\r' ) {
+
+            } else if ( nW[i].indexOf(".") >= 0 && nW.length > 1 && nW[i].indexOf("\n") === '\n' || nW[i].indexOf("\r") === '\r' ) {
                 console.log('found enter key');
+
             } else {
                 let w = nW[i];
                 let firstLetter = w[0];
@@ -62,9 +66,11 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
             let firstLetter = w[0];
             w = firstLetter.toUpperCase() + w.slice(1);
             nW[i+1] = w;
+
         } else if (nW[i].indexOf("\n") === '\n' || nW[i].indexOf("\r") === '\r') { // função para procurar a tecla enter em teste 01/09/2020
             console.log('found enter key');
          }
+
     }
     console.log(nW.join(" "));
 }

@@ -47,6 +47,11 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 nW[i+1] = w1;
 
             } else if ( nW[i].indexOf(".") >= 0 && nW.length <= 1 ) {
+                
+                if ( verifyChar(nW[i]) !== 0 ) {
+                    console.log("Finded Char");
+
+                }
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
@@ -90,15 +95,13 @@ function clearList(listA, busca) {
 
 function verifyChar(palavra) {
     let wordFind = palavra;
-    let searched = false;    
+    let charPosition = 0;    
     
      for (i = 0; i < wordFind.length; i++) {
         if (wordFind[i] === '\n' || wordFind[i] === '\r') {
-          console.log('found enter key');
-          searched = true;
+          charPosition = i+1;
         };
         //can improve more char tests here.
       };
-    return searched;
-
+    return charPosition;
 }

@@ -30,8 +30,9 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
     console.log(nW);
     // falta converter todas as palavras a seguir a quebra de linha (enter) 01/09/2020
     
-    for (let i = 0; i < nW.length; i++) {    
-        //console.log(nW[i].indexOf("\n"));    
+    for (let i = 0; i < nW.length; i++) {
+        
+        console.log( verifyChar(nW[i]) );
 
         if ( i == 0){
 
@@ -85,4 +86,19 @@ function clearList(listA, busca) {
         indice = list.indexOf(buscarPor);
     }
     return list;    
+}
+
+function verifyChar(palavra) {
+    let wordFind = palavra;
+    let searched = false;    
+    
+     for (i = 0; i < wordFind.length; i++) {
+        if (wordFind[i] === '\n' || wordFind[i] === '\r') {
+          console.log('found enter key');
+          searched = true;
+        };
+        //can improve more char tests here.
+      };
+    return searched;
+
 }

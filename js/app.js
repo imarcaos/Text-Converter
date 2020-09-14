@@ -46,6 +46,15 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 w1 = firstLetter1.toUpperCase() + w1.slice(1);
                 nW[i+1] = w1;
 
+                if ( verifyChar(nW[i+1]) !== 0 ) {
+                    let pChar = verifyChar(nW[i+1]);
+                    let wd1 = nW[i+1].slice(0, pChar);
+                    let wd2 = nW[i+1].slice(pChar+1);
+                    let nextLetter = nW[i+1][pChar];
+                    nW[i+1] = wd1 + nextLetter.toUpperCase() + wd2;
+                    console.log(verifyChar(nW[i+1]));
+                }
+
             } else if ( nW[i].indexOf(".") >= 0 && nW.length <= 1 ) {
                 let w = nW[i];
                 let firstLetter = w[0];
@@ -54,10 +63,10 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 
                 if ( verifyChar(nW[i]) !== 0 ) {
                     let pChar = verifyChar(nW[i]);
-                    let w1 = nW[i].slice(0, pChar);
-                    let w2 = nW[i].slice(pChar+1);
+                    let wd1 = nW[i].slice(0, pChar);
+                    let wd2 = nW[i].slice(pChar+1);
                     let nextLetter = nW[i][pChar];
-                    nW[i] = w1 + nextLetter.toUpperCase() + w2;
+                    nW[i] = wd1 + nextLetter.toUpperCase() + wd2;
                     console.log(verifyChar(nW[i]));
                 }
                 

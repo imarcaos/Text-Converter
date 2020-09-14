@@ -70,9 +70,6 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                     console.log(verifyChar(nW[i]));
                 }
                 
-            } else if ( nW[i].indexOf(".") >= 0 && nW.length > 1 && nW[i].indexOf("\n") === '\n' || nW[i].indexOf("\r") === '\r' ) {
-                console.log('found enter key');
-
             } else {
                 let w = nW[i];
                 let firstLetter = w[0];
@@ -80,15 +77,13 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 nW[i] = w;
             }
             
-        } else if ( nW[i].indexOf(".") >= 0 && nW.length > i ) { 
+        } else if ( nW[i].indexOf(".") >= 0 && nW.length > i ) {  //falha: ponto final e enter (letra maiuscula na palavra a seguir), ponto final espaço e enter
             let w = nW[i+1];
             let firstLetter = w[0];
             w = firstLetter.toUpperCase() + w.slice(1);
             nW[i+1] = w;
 
-        } else if (nW[i].indexOf("\n") === '\n' || nW[i].indexOf("\r") === '\r') { // função para procurar a tecla enter em teste 01/09/2020
-            console.log('found enter key');
-         }
+        }
 
     }
     console.log(nW.join(" "));

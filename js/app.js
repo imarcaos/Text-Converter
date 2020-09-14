@@ -32,8 +32,6 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
     
     for (let i = 0; i < nW.length; i++) {
         
-        console.log( verifyChar(nW[i]) );
-
         if ( i == 0){
 
             if ( nW[i].indexOf(".") >= 0 && nW.length > 1 ) {
@@ -52,7 +50,6 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                     let wd2 = nW[i+1].slice(pChar+1);
                     let nextLetter = nW[i+1][pChar];
                     nW[i+1] = wd1 + nextLetter.toUpperCase() + wd2;
-                    console.log(verifyChar(nW[i+1]));
                 }
 
             } else if ( nW[i].indexOf(".") >= 0 && nW.length <= 1 ) {
@@ -67,7 +64,6 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                     let wd2 = nW[i].slice(pChar+1);
                     let nextLetter = nW[i][pChar];
                     nW[i] = wd1 + nextLetter.toUpperCase() + wd2;
-                    console.log(verifyChar(nW[i]));
                 }
                 
             } else {
@@ -77,11 +73,23 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 nW[i] = w;
             }
             
-        } else if ( nW[i].indexOf(".") >= 0 && nW.length > i ) {  //falha: ponto final e enter (letra maiuscula na palavra a seguir), ponto final espaço e enter
-            let w = nW[i+1];
-            let firstLetter = w[0];
-            w = firstLetter.toUpperCase() + w.slice(1);
-            nW[i+1] = w;
+        } else if ( nW[i].indexOf(".") >= 0 && nW.length > i ) {  //falha: ponto final espaço e enter e último ponto final
+
+            if ( verifyChar(nW[i]) !== 0 ) {
+                let pChar = verifyChar(nW[i]);
+                let wd1 = nW[i].slice(0, pChar);
+                let wd2 = nW[i].slice(pChar+1);
+                let nextLetter = nW[i][pChar];
+                nW[i] = wd1 + nextLetter.toUpperCase() + wd2;
+                console.log(verifyChar(nW[i]));
+            } else if ( verifyChar(nW[i+1]) !== 0 ) {
+                let pChar = verifyChar(nW[i+1]);
+                let wd1 = nW[i+1].slice(0, pChar);
+                let wd2 = nW[i+1].slice(pChar+1);
+                let nextLetter = nW[i+1][pChar];
+                nW[i+1] = wd1 + nextLetter.toUpperCase() + wd2;
+                console.log(verifyChar(nW[i+1]));
+            }
 
         }
 

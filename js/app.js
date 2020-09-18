@@ -28,7 +28,6 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
     textIn = document.getElementById("textInOut").value.toLowerCase();
     nW = clearList(textIn.split(" "), "");    
     console.log(nW);
-    // falta converter todas as palavras a seguir a quebra de linha (enter) 01/09/2020
     
     for (let i = 0; i < nW.length; i++) {
         
@@ -57,13 +56,15 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
                 nW[i] = w;
+                console.log("posChar " + verifyChar(nW[i]));
+                console.log("LenghtWord" + nW[i].length);
                 
-                if ( verifyChar(nW[i]) !== 0 ) {
+                if ( verifyChar(nW[i]) !== 0 && verifyChar(nW[i]) != nW[i].length ) {
                     let pChar = verifyChar(nW[i]);
                     let wd1 = nW[i].slice(0, pChar);
                     let wd2 = nW[i].slice(pChar+1);
                     let nextLetter = nW[i][pChar];
-                    nW[i] = wd1 + nextLetter.toUpperCase() + wd2;
+                    nW[i] = wd1 + nextLetter.toUpperCase() + wd2; 
                 }
                 
             } else {
@@ -73,9 +74,10 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 nW[i] = w;
             }
             
-        } else if ( nW[i].indexOf(".") >= 0 && nW.length > i ) {  //falha: ponto final espaço e enter e último ponto final
+        } else if ( nW[i].indexOf(".") >= 0 ) {  //falha: ponto final espaço e enter e último ponto final
+            console.log("ultimo else");
 
-            if ( verifyChar(nW[i]) !== 0 ) {
+            if ( verifyChar(nW[i]) !== 0 && verifyChar(nW[i]) != nW[i].length ) {
                 let pChar = verifyChar(nW[i]);
                 let wd1 = nW[i].slice(0, pChar);
                 let wd2 = nW[i].slice(pChar+1);

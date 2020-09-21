@@ -31,9 +31,9 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
     
     for (let i = 0; i < nW.length; i++) {
         
-        if ( i == 0){
+        if ( i == 0){//1
 
-            if ( nW[i].indexOf(".") >= 0 && nW.length > 1 ) {
+            if ( nW[i].indexOf(".") >= 0 && nW.length > 1 ) {//2
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
@@ -42,48 +42,53 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 let firstLetter1 = w1[0];
                 w1 = firstLetter1.toUpperCase() + w1.slice(1);
                 nW[i+1] = w1;
+                console.log( "estou dentro do if 2")
 
-                if ( verifyChar(nW[i+1]) !== 0 ) {
+                if ( verifyChar(nW[i+1]) !== 0 ) {//3
+                    console.log( "estou dentro do if 2")
                     let pChar = verifyChar(nW[i+1]);
                     let wd1 = nW[i+1].slice(0, pChar);
                     let wd2 = nW[i+1].slice(pChar+1);
                     let nextLetter = nW[i+1][pChar];
                     nW[i+1] = wd1 + nextLetter.toUpperCase() + wd2;
+                    console.log( "estou dentro do if 3")
                 }
 
-            } else if ( nW[i].indexOf(".") >= 0 && nW.length <= 1 ) {
+            } else if ( nW[i].indexOf(".") >= 0 && nW.length <= 1 ) { //4
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
                 nW[i] = w;
-                console.log("posChar " + verifyChar(nW[i]));
-                console.log("LenghtWord" + nW[i].length);
                 
-                if ( verifyChar(nW[i]) !== 0 && verifyChar(nW[i]) != nW[i].length ) {
-                    let pChar = verifyChar(nW[i]);
+                if ( verifyChar(nW[i]) !== 0 && verifyChar(nW[i]) != nW[i].length ) { //5 - 2a condição: verifica se o enter está no final da word
+                    console.log( "estou dentro do if 5")
+                    let pChar = verifyChar(nW[i]) + 1; //coloca o char a seguir a posição do enter
                     let wd1 = nW[i].slice(0, pChar);
                     let wd2 = nW[i].slice(pChar+1);
                     let nextLetter = nW[i][pChar];
                     nW[i] = wd1 + nextLetter.toUpperCase() + wd2; 
                 }
                 
-            } else {
+            } else { //6
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
                 nW[i] = w;
+                console.log( "estou dentro do if 6")
             }
             
-        } else if ( nW[i].indexOf(".") >= 0 ) {
+        } else if ( nW[i].indexOf(".") >= 0 && nW.length > i) { //7 - 
+            
 
-            if ( verifyChar(nW[i]) !== 0 && verifyChar(nW[i]) != nW[i].length ) { // falha: aumentar tamanho letra a seguir ao ponto, mesma linha.
+            if ( verifyChar(nW[i]) !== 0 && verifyChar(nW[i]) != nW[i].length ) { // 8 - falha: aumentar tamanho letra a seguir ao ponto, mesma linha.
                 
-                let pChar = verifyChar(nW[i]);
+                let pChar = verifyChar(nW[i])+1;
                 let wd1 = nW[i].slice(0, pChar);
                 let wd2 = nW[i].slice(pChar+1);
                 let nextLetter = nW[i][pChar];
                 nW[i] = wd1 + nextLetter.toUpperCase() + wd2;
                 console.log(verifyChar(nW[i]));
+                console.log( "estou dentro do if 8")
 
             } /* else if ( verifyChar(nW[i+1]) !== 0 && verifyChar(nW[i+1]) != nW[i+1].length ) { // erro: ponto final na ultima palavra e com enter no final sem palavras a seguir
                 console.log("if 2");
@@ -119,7 +124,7 @@ function verifyChar(palavra) {
     
      for (i = 0; i < wordFind.length; i++) {
         if (wordFind[i] === '\n' || wordFind[i] === '\r') {
-          charPosition = i+1;
+          charPosition = i; //posição do char
         };
       };
     return charPosition;

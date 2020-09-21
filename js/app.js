@@ -23,6 +23,28 @@ function lCase() { //Converte o texto para todas as letras minúsculas
     outputText(textIn);
 }
 
+/* textos para testes:
+
+-meu texto começa aqui. a seguir vem outro texto.
+aqui.
+-meu.texto .texto
+-meu. texto .texto
+-meu. texto . texto
+
+*/
+
+/* Trabalhos a fazer na function upper case first word paragraph:
+-procurar o ponto, se o ponto estiver num item(palavra) da lista e estiver no meio da palavra converter letra a seguir
+-procurar o ponto, se o ponto estiver na ultima posição do item da lista, verificar se há palavra a seguir na lista e se
+ houver converter o primeiro char da mesma.
+
+-procurar por ponto e enter, se o ponto estiver na ultima posição do item da lista e preceder ao enter, verificar se há item a
+ seguir na lista, se houver converter primeiro caracter do item a seguir.
+-procurar por ponto e enter, se o ponto estiver no mesmo item da lista precedido de enter, encontrar char a seguir e converter
+
+-programar as funções para encontrar as posições dos pontos e enters e guardar em uma lista, talvez seja mais fácil?
+ */
+
 function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do paragráfo
     let textIn = "", nW = ""; // var text Input e new Word
     textIn = document.getElementById("textInOut").value.toLowerCase();
@@ -32,8 +54,8 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
     for (let i = 0; i < nW.length; i++) {
         
         if ( i == 0){//1
-
-            if ( nW[i].indexOf(".") >= 0 && nW.length > 1 ) {//2
+            
+            if ( nW[i].indexOf(".") >= 0 && nW.length > i ) {//2
                 let w = nW[i];
                 let firstLetter = w[0];
                 w = firstLetter.toUpperCase() + w.slice(1);
@@ -78,7 +100,6 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
             }
             
         } else if ( nW[i].indexOf(".") >= 0 && nW.length > i) { //7 - 
-            
 
             if ( verifyChar(nW[i]) !== 0 && verifyChar(nW[i]) != nW[i].length ) { // 8 - falha: aumentar tamanho letra a seguir ao ponto, mesma linha.
                 

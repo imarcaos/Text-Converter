@@ -69,7 +69,7 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 nW[i+1] = w1;
                 console.log( "estou dentro do if 2")
 
-                if ( findEnter(nW[i+1]).length !== 0 ) {//3
+                /* if ( findEnter(nW[i+1]).length !== 0 ) {//3
                     console.log( "estou dentro do if 2")
                     let pChar = verifyChar(nW[i+1]);
                     let wd1 = nW[i+1].slice(0, pChar);
@@ -77,7 +77,7 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                     let nextLetter = nW[i+1][pChar];
                     nW[i+1] = wd1 + nextLetter.toUpperCase() + wd2;
                     console.log( "estou dentro do if 3")
-                }
+                } */
 
             } else if ( nW[i].indexOf(".") >= 0 && nW.length <= 1 ) { //4
                 let w = nW[i];
@@ -85,14 +85,14 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 w = firstLetter.toUpperCase() + w.slice(1);
                 nW[i] = w;
                 
-                if ( findEnter(nW[i]).length !== 0 && findEnter(nW[i]).length != nW[i].length ) { //5 - 2a condição: verifica se o enter está no final da word
+                /* if ( findEnter(nW[i]).length !== 0 && findEnter(nW[i]).length != nW[i].length ) { //5 - 2a condição: verifica se o enter está no final da word
                     console.log( "estou dentro do if 5")
                     let pChar = verifyChar(nW[i]) + 1; //refazer, função alterada para array
                     let wd1 = nW[i].slice(0, pChar);
                     let wd2 = nW[i].slice(pChar+1);
                     let nextLetter = nW[i][pChar];
-                    nW[i] = wd1 + nextLetter.toUpperCase() + wd2; 
-                }
+                    nW[i] = wd1 + nextLetter.toUpperCase() + wd2;
+                } */
                 
             } else { //6
                 let w = nW[i];
@@ -104,7 +104,7 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
             
         } else if ( nW[i].indexOf(".") >= 0 && nW.length > i) { //7 - 
 
-            if ( verifyChar(nW[i]) !== 0 && verifyChar(nW[i]) != nW[i].length ) { // 8 - falha: aumentar tamanho letra a seguir ao ponto, mesma linha.
+            /* if ( verifyChar(nW[i]) !== 0 && verifyChar(nW[i]) != nW[i].length ) { // 8 - falha: aumentar tamanho letra a seguir ao ponto, mesma linha.
                 
                 let pChar = verifyChar(nW[i])+1;
                 let wd1 = nW[i].slice(0, pChar);
@@ -114,7 +114,7 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 console.log(verifyChar(nW[i]));
                 console.log( "estou dentro do if 8")
 
-            } /* else if ( verifyChar(nW[i+1]) !== 0 && verifyChar(nW[i+1]) != nW[i+1].length ) { // erro: ponto final na ultima palavra e com enter no final sem palavras a seguir
+            } */ /* else if ( verifyChar(nW[i+1]) !== 0 && verifyChar(nW[i+1]) != nW[i+1].length ) { // erro: ponto final na ultima palavra e com enter no final sem palavras a seguir
                 console.log("if 2");
                 let pChar = verifyChar(nW[i+1]);
                 let wd1 = nW[i+1].slice(0, pChar);
@@ -142,6 +142,7 @@ function clearList(listA, busca) {
     return list;    
 }
 
+//experimentar mudar a função para retornar lista se vericar ponto e enter
 function findEnter (palavra) {
     let wordFind = palavra;
     let charPosition = [];    

@@ -34,6 +34,10 @@ aqui.
 */
 
 /* Trabalhos a fazer na function upper case first word paragraph:
+23/09/2020
+-alterei a função verifyChar (retornava true) para findEnter (retorna lista com as posições do char enter)
+-será necessário alterar todas as chamadas a função anterior
+
 -procurar o ponto, se o ponto estiver num item(palavra) da lista e estiver no meio da palavra converter letra a seguir
 -procurar o ponto, se o ponto estiver na ultima posição do item da lista, verificar se há palavra a seguir na lista e se
  houver converter o primeiro char da mesma.
@@ -52,7 +56,6 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
     console.log(nW);
     
     for (let i = 0; i < nW.length; i++) {
-        
         if ( i == 0){//1
             
             if ( nW[i].indexOf(".") >= 0 && nW.length > i ) {//2
@@ -66,7 +69,7 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 nW[i+1] = w1;
                 console.log( "estou dentro do if 2")
 
-                if ( verifyChar(nW[i+1]) !== 0 ) {//3
+                if ( findEnter(nW[i+1]).length !== 0 ) {//3
                     console.log( "estou dentro do if 2")
                     let pChar = verifyChar(nW[i+1]);
                     let wd1 = nW[i+1].slice(0, pChar);
@@ -82,9 +85,9 @@ function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do
                 w = firstLetter.toUpperCase() + w.slice(1);
                 nW[i] = w;
                 
-                if ( verifyChar(nW[i]) !== 0 && verifyChar(nW[i]) != nW[i].length ) { //5 - 2a condição: verifica se o enter está no final da word
+                if ( findEnter(nW[i]).length !== 0 && findEnter(nW[i]).length != nW[i].length ) { //5 - 2a condição: verifica se o enter está no final da word
                     console.log( "estou dentro do if 5")
-                    let pChar = verifyChar(nW[i]) + 1; //coloca o char a seguir a posição do enter
+                    let pChar = verifyChar(nW[i]) + 1; //refazer, função alterada para array
                     let wd1 = nW[i].slice(0, pChar);
                     let wd2 = nW[i].slice(pChar+1);
                     let nextLetter = nW[i][pChar];
@@ -139,13 +142,13 @@ function clearList(listA, busca) {
     return list;    
 }
 
-function verifyChar(palavra) {
+function findEnter (palavra) {
     let wordFind = palavra;
-    let charPosition = 0;    
+    let charPosition = [];    
     
      for (i = 0; i < wordFind.length; i++) {
         if (wordFind[i] === '\n' || wordFind[i] === '\r') {
-          charPosition = i; //posição do char
+          charPosition.push(i+1); //adiciona posição do char à lista
         };
       };
     return charPosition;

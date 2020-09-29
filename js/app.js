@@ -23,6 +23,11 @@ function lCase() { //Converte o texto para todas as letras minúsculas
     outputText(textIn);
 }
 
+//teste com expressões regulares
+function uCaseFirstWordParagh { //Converte para maiúscula a primeira letra do paragráfo
+    //variáveis Locais com let-> minWords (minimo palavras), ignoresWords (palavras a serem ignoradas), textIn (texto de entrada)
+}
+
 /* textos para testes:
 
 -meu texto começa aqui. a seguir vem outro texto.
@@ -32,22 +37,6 @@ aqui.
 -meu. texto . texto
 
 */
-
-/* Trabalhos a fazer na function upper case first word paragraph:
-23/09/2020
--alterei a função verifyChar (retornava true) para findEnter (retorna lista com as posições do char enter)
--será necessário alterar todas as chamadas a função anterior
-
--procurar o ponto, se o ponto estiver num item(palavra) da lista e estiver no meio da palavra converter letra a seguir
--procurar o ponto, se o ponto estiver na ultima posição do item da lista, verificar se há palavra a seguir na lista e se
- houver converter o primeiro char da mesma.
-
--procurar por ponto e enter, se o ponto estiver na ultima posição do item da lista e preceder ao enter, verificar se há item a
- seguir na lista, se houver converter primeiro caracter do item a seguir.
--procurar por ponto e enter, se o ponto estiver no mesmo item da lista precedido de enter, encontrar char a seguir e converter
-
--programar as funções para encontrar as posições dos pontos e enters e guardar em uma lista, talvez seja mais fácil?
- */
 
 function uCaseFirstParaghWord() { //Converte para maiúscula a primeira letra do paragráfo
     let textIn = "", nW = ""; // var text Input e new Word

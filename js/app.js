@@ -24,9 +24,14 @@ function lCase() { //Converte o texto para todas as letras minúsculas
 }
 
 //teste com expressões regulares
-function uCaseFirstWordParagh { //Converte para maiúscula a primeira letra do paragráfo
-    //variáveis Locais com let-> minWords (minimo palavras), ignoresWords (palavras a serem ignoradas), textIn (texto de entrada)
-}
+function uCaseFirstWordParagh() { //Converte para maiúscula a primeira letra do paragráfo
+    //variáveis Locais com let-> minWords (minimo palavras), ignoreWords (palavras a serem ignoradas), textIn (texto de entrada)
+    let minWords = 1;
+    let ignoreWords = ['a','as', 'e', 'o', 'os', 'ou', 'ao', 'da', 'das', 'de', 'do', 'dos', 'na', 'nas', 'no', 'nos', 'para', 'por'];
+    let textIn = $("textInOut").val().toLowerCase().match(/\S+\s*/g);
+    console.log(textIn);
+
+};
 
 /* textos para testes:
 

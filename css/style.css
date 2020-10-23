@@ -17,6 +17,7 @@
  
 label {
   display: block;
+  justify-content: center;
 }
 label#convText {
   letter-spacing: 1px;

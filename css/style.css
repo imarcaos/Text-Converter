@@ -1,4 +1,4 @@
-#container {
+#container-text {
   display: flex;
   flex-direction: column; 
   justify-content: center;
@@ -7,11 +7,11 @@
 }
  
 #textBox {
-  order: 1;
+  order: 2;
 }
 
 #btnBox {
-  order: 2;
+  order: 3;
 
 }
  
@@ -20,6 +20,7 @@ label {
   
 }
 label#convText {
+  order: 1;
   letter-spacing: 1px;
   justify-content: center;
   font-size: 30px;

@@ -23,8 +23,8 @@ function lCase() { //Converte o texto para todas as letras minúsculas
     outputText(textIn);
 }
 
-//teste com expressões regulares
-function uCaseSentence() {
+
+function uCaseSentence() { //Converte a primeira letra do parágrafo para maiúscula
   let textIn = document.getElementById("textInOut").value;
   let textOut = ufirstChar(textIn);
   outputText(textOut);

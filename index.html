@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="content-convtext">
-        <p class="text-box">Conversor de Textos</p>
-        <textarea class="textInOut" placeholder="Digite ou Cole seu texto aqui"></textarea>
-            <button onclick="uCase()" class="btnBox">MAIÚSCULO</button>
-            <button onclick="lCase()" class="btnBox">minúsculo</button>
-            <button onclick="uCaseSentence()" class="btnBox">Primeira letra do paragráfo</button>
-    </div>
-
-   <script src="js/app.js"></script> 
+    <!-- Text Convertion -->
+    <div class="ext-convtext">
+        <div class="content-convtext">
+            <p class="text-box">Conversor de Textos</p>
+            <textarea id="textInOut" placeholder="Digite ou Cole seu texto aqui"></textarea>
+                <button onclick="uCase()" id="uCase" class="btnBox">MAIÚSCULO</button>
+                <button onclick="lCase()" class="btnBox">minúsculo</button>
+                <button onclick="uCaseSentence()" class="btnBox">Primeira letra do paragráfo</button>
+        </div><!-- #content-convtext -->
+    </div> <!-- #ext-convtext -->
+    <script src="js/app.js"></script> 
+    <!-- #Text Convertion - End-->
+   
 </body>
 </html>

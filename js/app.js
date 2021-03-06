@@ -1,7 +1,7 @@
 /*
     App Text Converter
     By iMarcaos 
-    Start Date: 22/08/2020
+    Project Started: 22/08/2020
     Version: 0.2-10.20
 */
 

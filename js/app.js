@@ -10,21 +10,23 @@ function outputText(textOut) {
     //console.log("Texto de Saída " + textOut);    
 }
 
-function uCase() { //Converte o texto para todas as letras maiúsculas
+//Converte o texto para todas as letras maiúsculas
+function upperCase() {
     let textIn = "";
     textIn = document.getElementById("textInOut").value.toUpperCase();
     //console.log("Função upCase " + textIn);
     outputText(textIn);
 }
 
-function lCase() { //Converte o texto para todas as letras minúsculas
+//Converte o texto para todas as letras minúsculas
+function lowerCase() {
     let textIn = "";
     textIn = document.getElementById("textInOut").value.toLowerCase();
     outputText(textIn);
 }
 
-
-function uCaseSentence() { //Converte a primeira letra do parágrafo para maiúscula
+//Converte a primeira letra do parágrafo para maiúscula
+function upperCaseSentence() {
   let textIn = document.getElementById("textInOut").value;
   let textOut = ufirstChar(textIn);
   outputText(textOut);

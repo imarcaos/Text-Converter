@@ -27,13 +27,13 @@ function lowerCase() {
 
 //Converte a primeira letra do parágrafo para maiúscula
 function upperCaseSentence() {
-  let textIn = document.getElementById("textInOut").value;
-  let textOut = ufirstChar(textIn);
-  outputText(textOut);
+    let textIn = document.getElementById("textInOut").value;
+    let textOut = ufirstChar(textIn);
+    outputText(textOut);
 }
 
 function ufirstChar(inTransit) {
-    let convertedString = inTransit.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g,function(c){return c.toUpperCase()});
+    let convertedString = inTransit.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, function (c) { return c.toUpperCase() });
     return convertedString;
 }
 
@@ -41,13 +41,24 @@ function ufirstChar(inTransit) {
 function alternateChar() {
     let textIn = document.getElementById("textInOut").value.toLowerCase();
     textIn = textIn.split('');
-    for (var i=0; i<textIn.length; i+=2) {
+    for (var i = 0; i < textIn.length; i += 2) {
         textIn[i] = textIn[i].toUpperCase();
     }
     let textOut = textIn.join('');
     outputText(textOut);
 }
 
+//Faz a inversão de todo o texto
+function textInverter() {
+    let textIn = document.getElementById("textInOut").value;
+    let textOut = textIn.split('').reverse().join('');
+    outputText(textOut);
+}
+
+//Selecionar todo o texto
+function textSelection() {
+    document.getElementById("textInOut").select();
+}
 
 
 /* textos para testes:

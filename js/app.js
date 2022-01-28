@@ -37,6 +37,17 @@ function ufirstChar(inTransit) {
     return convertedString;
 }
 
+//Converte uma letra para maiúscula e outra para minúscula em todo o texto
+function alternateChar() {
+    let textIn = document.getElementById("textInOut").value.toLowerCase();
+    textIn = textIn.split('');
+    for (var i=0; i<textIn.length; i+=2) {
+        textIn[i] = textIn[i].toUpperCase();
+    }
+    let textOut = textIn.join('');
+    outputText(textOut);
+}
+
 
 
 /* textos para testes:

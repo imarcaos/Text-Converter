@@ -2,7 +2,7 @@
     App Text Converter
     By iMarcaos 
     Project Started: 22/08/2020
-    Version: 0.2-10.20
+    Version: 0.3-01.22
 */
 
 function outputText(textOut) {

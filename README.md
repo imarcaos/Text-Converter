@@ -6,7 +6,7 @@ JavaScript, Css e Html
 #### **Imagem da V1 do Conversor de Texto**
 ![V1 Text Converter](https://github.com/imarcaos/Text-Modification/blob/master/img/conversor-texto-marcaos-v1.png?raw=true "V1 Text Converter")
 
-[Ver o Conversor de Texto em Funcionamento](http://melomarcos.com/text-converter.html) - brevemente
+<a href="http://melomarcos.com/text-converter.html" target="_blank">Ver o Conversor de Texto em Funcionamento</a> - brevemente
 
 ## Sobre
 

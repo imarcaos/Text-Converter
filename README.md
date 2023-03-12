@@ -1,22 +1,31 @@
 # Conversor de Texto
+> Status do Projeto: Em desenvolvimento :warning:
+
 JavaScript, Css e Html
 
-![alt text](https://github.com/imarcaos/Text-Modification/blob/master/img/conversor-texto-marcaos-v1.png?raw=true)
+#### **Imagem da V1 do Conversor de Texto**
+![V1 Text Converter](https://github.com/imarcaos/Text-Modification/blob/master/img/conversor-texto-marcaos-v1.png?raw=true "V1 Text Converter")
+[Ver o Conversor de Texto em Funcionamento](http://melomarcos.com/text-converter.html)
 
 ## Sobre
 
-<p>O projeto <strong>Conversor de Texto</strong> está a ser desenvolvido com o objetivo de estudo e prática em javascript.</p>
+O projeto **Conversor de Texto** está a ser desenvolvido com o objetivo de estudo e prática do JavaScript e CSS.
 
-<p>Na primeira fase do projeto será colocar todas as letras em minúsculo, maiúsculo e primeira letra de cada paragráfo em maiúscula.</p>
-<p>Nas próximas fases ir acrescendo outras modificações de texto.<p>
+Sempre que possível irei fazer updates no código, seja para o melhorar ou para adicionar novas funcionalidade.
 
 ***
+## Versões
+1. V1-0820 - Início do código - converte todo o texto em letras minúsculas e maiúsculas.
+2. V2-1020 - Adicionada a função para converter a primeira letra para maiúscula de cada parágrafo.
+3. V3-0122 - Novas função adicionadas ao conversor de texto:
+    - Alternado - cria uma letra maiúscula e outra minúscula.
+    - Inverter - inverte a posição de cada palavra.
+    - Selecionar tudo - seleciona o texto todo.
+4. v4-0323 - Melhora no código dos marcadores HTML e estilização CSS.
+***
 ### Observação
- <p>Optei por classificar por versões, conforme fizer acréscimos de funções ou melhorias significativas no código. Exemplo: 0.1-08.20, sendo o 0.1 a versão e 08.20 o mês 08 e ano 2020 .<p>
+As versões estão classificadas da seguinte forma:
 
-- 0.2-10.20 - Adicionada a função para converter a primeira letra para maiúscula de cada parágrafo.
-- 0.1-08.20 - Início do código - converte todo o texto em letras minúsculas e maiúsculas.
+**v1-0820**, sendo  **v1**(versão 1) seguido da data do update **-0820** (mês e ano).
 
-
-> Status do Projeto: Em desenvolvimento :warning:
 

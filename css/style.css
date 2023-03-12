@@ -1,52 +1,61 @@
-body, ul, li, p {
+/*
+App Text Converter
+By iMarcaos (github)
+Project Started: 2020-08-22
+Update: 2023-04-12
+Version: v4-0323
+*/
+
+* {
   margin: 0;
   padding: 0;
-  list-style: none;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
-#ext-convtext {
-  width: 650px;
-  margin: auto;
-  padding: 10px;
-  box-sizing: border-box;
-  margin-top: 20px;
-  margin-bottom: 60px;
+body {
+  background: linear-gradient(rgb(93, 48, 255), rgb(121, 84, 255));
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
-.content-convtext {
-  width: 650px;
+
+/* Main */
+.content {
+  display: flex;
+  justify-content: space-around;
+  
+  width: 100vw;
+  height: 100vh;
+}
+.conversor-box {
+  display: flex;
+  flex-flow: column wrap;
+  width: 80%;
+  max-width: 600px;
   margin: auto;
+  padding: 10px 20px;
   text-align: center;
   background: rgba(0, 0, 0, 0.3);
-  padding: 10px 20px;
-  box-sizing: border-box;
-  margin-top: 20px;
   border-radius: 7px;
-  font-family: Arial, Helvetica, sans-serif;
 }
-
-#text-box {
-  color: white;
-  font-weight: 600;
+.content-convtext  {
   text-align: center;
-  margin: 0;
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-.content-convtext > input, textarea {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 7px;
-  box-sizing: border-box;
-  font-size: 16px;
-  border: none;
 }
 
-.content-convtext > textarea {
+.title-box {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.conversor-box textarea {
   min-height: 100px;
   max-height: 200px;
   max-width: 100%;
+
+  margin-bottom: 20px;
+  padding: 7px;
+  font-size: 16px;
+  border: none;
 }
 
 #btnBox {
@@ -55,9 +64,7 @@ body, ul, li, p {
   margin: 7px 2px;
   padding: 7px 7px;
   border-radius: 5px;
-}
 
-#btnBox {
   cursor: pointer;
   transition-duration: 0.4s;
 }
@@ -65,4 +72,22 @@ body, ul, li, p {
 #btnBox:hover {
   background-color: #dcc9fa;
   color: rgb(5, 5, 5);
+}
+
+.version {
+  color: rgb(143, 143, 143);
+  text-align: right;
+  font-size: 0.8em;
+}
+
+/* Reponsive Section*/
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    
+  /* Main */
+  .content {
+    padding: 90px 0;
+    height: 100%;
+  }
 }

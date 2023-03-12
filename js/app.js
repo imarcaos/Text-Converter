@@ -1,8 +1,9 @@
 /*
     App Text Converter
-    By iMarcaos 
-    Project Started: 22/08/2020
-    Version: 0.3-01.22
+    By iMarcaos (github)
+    Project Started: 2020-08-22
+    Update: 2023-03-12
+    Version: v4-0323
 */
 
 function outputText(textOut) {
